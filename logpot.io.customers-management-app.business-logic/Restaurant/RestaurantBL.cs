@@ -1,4 +1,5 @@
-﻿using logpot.io.customers_management_app.entities.Restaurant;
+﻿using logpot.io.customers_management_app.dto.Restaurant;
+using logpot.io.customers_management_app.entities.Restaurant;
 using logpot.io.customers_management_app.entities.Service;
 
 namespace logpot.io.customers_management_app.business_logic.Restaurant
@@ -19,7 +20,7 @@ namespace logpot.io.customers_management_app.business_logic.Restaurant
             };
         }
 
-        public RestaurantEntity Create(RestaurantEntity entity)
+        public RestaurantEntity Create(RestaurantDTO entity)
         {
             throw new NotImplementedException();
         }

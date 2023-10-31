@@ -1,8 +1,9 @@
-﻿namespace logpot.io.customers_management_app.entities.Service
+﻿using logpot.io.customers_management_app.entities.BaseEntity;
+
+namespace logpot.io.customers_management_app.entities.Service
 {
-    public interface IServiceEntity
+    public interface IServiceEntity : IBaseEntity
     {
-        string Id { get; }
         string Name { get; }
         double Price { get; set; }
         bool IsActive { get; }

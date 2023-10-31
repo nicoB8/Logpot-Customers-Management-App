@@ -1,4 +1,6 @@
+using AutoMapper;
 using logpot.io.customers_management_app.business_logic.Restaurant;
+using logpot.io.customers_management_app.Mapper_Profiles;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<IRestaurantBL, RestaurantBL>();
+
+var config = new MapperConfiguration(cfg =>
+{
+    cfg.AddProfile<GeneralProfiles>();
+});
+
+builder.Services.AddAutoMapper(typeof(GeneralProfiles));
 
 var app = builder.Build();
 

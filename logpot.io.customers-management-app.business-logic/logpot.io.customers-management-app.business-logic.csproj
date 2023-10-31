@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\logpot.io.customers-management-app.dto\logpot.io.customers-management-app.dto.csproj" />
     <ProjectReference Include="..\logpot.io.customers-management-app.entities\logpot.io.customers-management-app.entities.csproj" />
   </ItemGroup>
 
