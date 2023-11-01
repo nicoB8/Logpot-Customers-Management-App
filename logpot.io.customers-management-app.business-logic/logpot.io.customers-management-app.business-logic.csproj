@@ -10,6 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\logpot.io.customers-management-app.dto\logpot.io.customers-management-app.dto.csproj" />
     <ProjectReference Include="..\logpot.io.customers-management-app.entities\logpot.io.customers-management-app.entities.csproj" />
+    <ProjectReference Include="..\logpot.io.customers-management.repositories\logpot.io.customers-management.repositories.csproj" />
   </ItemGroup>
 
 </Project>

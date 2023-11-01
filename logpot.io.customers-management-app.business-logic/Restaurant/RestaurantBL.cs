@@ -1,4 +1,5 @@
-﻿using logpot.io.customers_management_app.dto.Restaurant;
+﻿using logpot.io.customers_management.repositories.RestaurantRepository;
+using logpot.io.customers_management_app.dto.Restaurant;
 using logpot.io.customers_management_app.entities.Restaurant;
 using logpot.io.customers_management_app.entities.Service;
 
@@ -7,32 +8,26 @@ namespace logpot.io.customers_management_app.business_logic.Restaurant
     public class RestaurantBL : IRestaurantBL
     {
         public IEnumerable<RestaurantEntity> Restaurants { get; set; }
-        public RestaurantBL()
+        private readonly IRestaurantRepository _restaurantRepository;
+        public RestaurantBL(IRestaurantRepository restaurantRepository)
         {
-            var services = new List<ServiceEntity>
-            {
-                new ManagedService(50, DateTime.Now, DateTime.Now.AddDays(30), "a123", 0, "Gestion de Menu")
-            };
-
-            Restaurants = new List<RestaurantEntity>
-            {
-                new RestaurantEntity("Nico", RestaurantStatus.Potential, services)
-            };
+            _restaurantRepository = restaurantRepository;
         }
 
         public RestaurantEntity Create(RestaurantDTO entity)
         {
-            throw new NotImplementedException();
+            var restaurant = new RestaurantEntity(entity.Name, RestaurantStatus.Potential);
+            return _restaurantRepository.Create(restaurant);
         }
 
         public Task<RestaurantEntity> Get(string id)
         {
-            return Task.FromResult(Restaurants.First(r => r.Id == id));
+            return Task.FromResult(_restaurantRepository.Get(id));
         }
 
         public IEnumerable<RestaurantEntity> GetAll()
         {
-            return Restaurants;
+            return _restaurantRepository.GetAll();
         }
     }
 }

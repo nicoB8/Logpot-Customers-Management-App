@@ -7,13 +7,12 @@ namespace logpot.io.customers_management_app.entities.Restaurant
     {
         public RestaurantEntity() { }
 
-        public RestaurantEntity(string name, RestaurantStatus status, IEnumerable<ServiceEntity> services)
+        public RestaurantEntity(string name, RestaurantStatus status)
         {
             Id = Guid.NewGuid().ToString();
             CreatedAt = DateTime.Now;
             Name = name;
             Status = status;
-            Services = services;
         }
 
         public string Name { get; set; }

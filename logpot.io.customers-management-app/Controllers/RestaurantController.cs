@@ -37,5 +37,13 @@ namespace logpot.io.customers_management_app.Controllers
 
             return _mapper.Map<IEnumerable<RestaurantDTO>>(restaurants);
         }
+
+        [HttpPost]
+        public async Task<RestaurantDTO> Post(RestaurantDTO restaurant)
+        {
+            var restaurantEntity = RestaurantBL.Create(restaurant);
+
+            return _mapper.Map<RestaurantDTO>(restaurantEntity);
+        }
     }
 }
