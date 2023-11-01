@@ -7,6 +7,6 @@ namespace logpot.io.customers_management_app.entities.Restaurant
     {
         string Name { get; set; }
         RestaurantStatus Status { get; set; }
-        IEnumerable<IServiceEntity> Services { get; set; }
+        IEnumerable<ServiceEntity> Services { get; set; }
     }
 }

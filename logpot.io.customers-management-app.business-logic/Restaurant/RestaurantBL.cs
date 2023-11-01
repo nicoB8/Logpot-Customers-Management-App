@@ -9,9 +9,9 @@ namespace logpot.io.customers_management_app.business_logic.Restaurant
         public IEnumerable<RestaurantEntity> Restaurants { get; set; }
         public RestaurantBL()
         {
-            var services = new List<IServiceEntity>
+            var services = new List<ServiceEntity>
             {
-                new ManagedService(50, DateTime.Now, DateTime.Now.AddDays(30), "a123", 0)
+                new ManagedService(50, DateTime.Now, DateTime.Now.AddDays(30), "a123", 0, "Gestion de Menu")
             };
 
             Restaurants = new List<RestaurantEntity>

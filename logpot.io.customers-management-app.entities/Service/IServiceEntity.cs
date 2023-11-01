@@ -1,4 +1,5 @@
 ﻿using logpot.io.customers_management_app.entities.BaseEntity;
+using logpot.io.customers_management_app.entities.Restaurant;
 
 namespace logpot.io.customers_management_app.entities.Service
 {
@@ -9,5 +10,7 @@ namespace logpot.io.customers_management_app.entities.Service
         bool IsActive { get; }
         DateTime StartDate { get; }
         DateTime EndDate { get; }
+        string RestaurantId { get; set; }
+        RestaurantEntity Restaurant { get; set; }
     }
 }

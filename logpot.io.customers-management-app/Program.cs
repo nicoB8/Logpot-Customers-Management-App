@@ -1,10 +1,14 @@
 using AutoMapper;
+using logpot.io.customers_management.repositories;
 using logpot.io.customers_management_app.business_logic.Restaurant;
 using logpot.io.customers_management_app.Mapper_Profiles;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<AppDBContext>(x => x.UseSqlServer(connectionString));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

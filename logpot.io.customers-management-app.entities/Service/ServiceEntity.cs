@@ -1,7 +1,11 @@
-﻿namespace logpot.io.customers_management_app.entities.Service
+﻿using logpot.io.customers_management_app.entities.Restaurant;
+
+namespace logpot.io.customers_management_app.entities.Service
 {
     public abstract class ServiceEntity : BaseEntity.BaseEntity, IServiceEntity
     {
+        public ServiceEntity() { }
+
         public ServiceEntity(string name, double price, DateTime startDate, DateTime endDate)
         {
             Id = Guid.NewGuid().ToString();
@@ -18,5 +22,7 @@
         public DateTime StartDate { get; }
         public DateTime EndDate { get; }
         public bool IsActive { get; }
+        public string RestaurantId { get; set; }
+        public RestaurantEntity Restaurant { get; set; }
     }
 }
