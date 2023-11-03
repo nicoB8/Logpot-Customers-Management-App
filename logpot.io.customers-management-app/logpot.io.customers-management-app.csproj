@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\logpot.io.customers-management-app.business-logic\logpot.io.customers-management-app.business-logic.csproj" />
+    <ProjectReference Include="..\logpot.io.customers-management-app.businessLogic\logpot.io.customers-management-app.businessLogic.csproj" />
   </ItemGroup>
 
 </Project>
